@@ -1,0 +1,5 @@
+@article{hasan2023fast,
+  title={Fast aerodynamics prediction of wedge tail airfoils using multi-head perceptron network},
+  author={Hasan, Md Moynul and Rahaman, Md Mashiur and Zakaria, NM Golam},
+  year={2023}
+}

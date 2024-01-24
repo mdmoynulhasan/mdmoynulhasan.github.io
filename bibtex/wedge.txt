@@ -1,0 +1,9 @@
+@article{hasan2023effects,
+  title={The effects of wedge tail thickness on NACA 0021 airfoil performance},
+  author={Hasan, Md Moynul and Rahaman, Md Mashiur and Zakaria, NM Golam},
+  journal={Journal of Maritime Research},
+  volume={20},
+  number={2},
+  pages={52--63},
+  year={2023}
+}
