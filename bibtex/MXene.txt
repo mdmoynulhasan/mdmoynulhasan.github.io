@@ -1,0 +1,7 @@
+@article{merugu2025ti3c2t,
+  title={Ti3C2T x MXene Additives for Enhanced Pool Boiling Regime},
+  author={Merugu, Saketh and Hasan, Md Moynul and Thakur, Anupma and Patenaude, Jacob and Anasori, Babak and Choueiri, George and Gupta, Anju},
+  journal={ACS Omega},
+  year={2025},
+  publisher={ACS Publications}
+}
