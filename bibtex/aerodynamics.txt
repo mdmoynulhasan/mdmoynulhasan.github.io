@@ -1,0 +1,5 @@
+@article{hasan2024predicting,
+  title={Predicting aerodynamic characteristics of airfoils using artificial neural network},
+  author={Hasan, Md Moynul and Faisal, Mohammad Fahim and Zakaria, NM Golam and Rahaman, Md Mashiur},
+  year={2024}
+}
