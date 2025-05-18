@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en" class="moynul_pub">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=1200">
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="icon" href="./icon/toledo.png" >
@@ -84,8 +85,8 @@ a.blue-link {
   <div id="top-nav">
     <div class="nav-container">
       <a href="#about" class="nav-link">Home</a>
-<a href="publication.html" class="nav-link">Research</a>
-<a href="projects.html" class="nav-link">Projects</a>
+<a href="research.html" class="nav-link">Research</a>
+<a href="misc.html" class="nav-link">Misc</a>
 <a href="./files/CV_MMH.pdf" target="_blank" class="nav-link">CV</a>
     </div>
   </div>
@@ -102,7 +103,7 @@ a.blue-link {
         <p style="text-align: justify;" style="line-height:25px;color: #787878">
             I am a second-year M.S. student in Mechanical Engineering at the <a href="https://www.utoledo.edu/" style="color: #196CD1;" target="_blank">University of Toledo</a>,
             advised by Prof. <a href="https://www.utoledo.edu/engineering/mechanical-industrial-manufacturing-engineering/people/gupta.html" target="_blank" style="color: #196CD1;">Anju Gupta</a>.
-            My research focuses on pool boiling heat transfer, combining experimental investigations and theoretical modeling. I am also exploring Scientific Machine Learning (SciML)
+            My research focuses on pool boiling heat transfer, with an emphasis on experimental investigations. I am also exploring Scientific Machine Learning (SciML)
             and am currently taking the AI in Science and Engineering course by ETH Zürich to expand my expertise.
             I hold a B.S. in Naval Architecture and Marine Engineering from <a href="https://www.buet.ac.bd/web/#/" target="_blank" style="color: #196CD1;">Bangladesh University of Engineering & Technology (BUET)</a>, where I worked on aerodynamic modeling of airfoils using Artificial Neural Networks (ANNs) under
             Prof. <a href="https://name.buet.ac.bd/faculty-member/dr-n-m-golam-zakaria" target="_blank" style="color: #196CD1;">N. M. Golam Zakaria</a> and contributed to biomedical image processing & deep learning research with Assoc Prof. <a href="https://bme.buet.ac.bd/profile/taufiq-hasan/" target="_blank" style="color: #196CD1;">Taufiq Hasan</a>
@@ -142,7 +143,7 @@ a.blue-link {
 
                          <tr>
                              <!-- <td width="20%"><center>Research Intern</center></td>-->
-                             <td width="20%"><center>Teaching Assistant</center></td>
+                             <td width="20%"><center>Graduate Assistant</center></td>
                              <td width="20%"><center>Master's</center></td>
                              <td width="20%"><center>Research Assistant</center></td>
                              <td width="20%"><center>ML Engineer Intern</center></td>
@@ -219,14 +220,14 @@ a.blue-link {
 
 <!-- Left Arrow -->
 <button id="left-arrow" class="scroll-btn" onclick="scrollHighlights(-1)">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
     <polyline points="15 18 9 12 15 6"/>
   </svg>
 </button>
 
 <!-- Right Arrow -->
 <button id="right-arrow" class="scroll-btn" onclick="scrollHighlights(1)">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
     <polyline points="9 6 15 12 9 18"/>
   </svg>
 </button>
@@ -263,7 +264,7 @@ a.blue-link {
                          <!-- <p><font color=#787878>2023/12 - Work on effects of wedge tail thickness on NACA 0021 airfoil got published in <a href="https://www.jmr.unican.es/" target="_blank"> JMR</a>!</font></p> -->
                          <p><font color=#787878>2025/02 - Work on MXene additives for enhanced pool boiling got published in <a href="https://pubs.acs.org/journal/acsodf?ref=breadcrumb" target="_blank" style="color: #196CD1;"> ACS Omega</a>!</font></p>
                          <p><font color=#787878>2024/01 - Work on fast aerodynamics prediction of wedge tail airfoils got published in <a href="https://link.springer.com/journal/13369" target="_blank" style="color: #196CD1;"> AJSE</a>!</font></p>
-                         <p><font color=#787878>2023/12 - Received a teaching assistantship!</font></p>
+                         <p><font color=#787878>2023/12 - Received graduate assistantship!</font></p>
                          <p><font color=#787878>2023/09 - Accepted at <a href="https://www.utoledo.edu/" target="_blank" style="color: #196CD1;">UToledo</a> for fully funded MS in Mechanical Engineering.</font></p>
                          <p><font color=#787878>2023/08 - Work on effects of wedge tail thickness on NACA 0021 airfoil got published in <a href="https://www.jmr.unican.es/" target="_blank" style="color: #196CD1;"> JMR</a>!</font></p>
                          <p><font color=#787878>2022/10 - Joined <a href="https://www.buet.ac.bd/web/#/" target="_blank" style="color: #196CD1;">BUET</a> as a Research Assistant.</font></p>
@@ -633,6 +634,11 @@ body {
 .highlight-link:focus p {
   text-decoration: none !important;
   color: #787878 !important;  /* keep the intended gray */
+}
+
+/* Customize scrollbar for Webkit-based browsers */
+.highlight-scroll::-webkit-scrollbar {
+  height: 0px; /* Makes it thinner */
 }
 
 </style>
