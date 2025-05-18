@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <meta name="viewport" content="width=1200">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="icon" href="./icon/toledo.png" >
@@ -261,7 +261,7 @@ a.blue-link {
                  <div class="row">
                      <div class="col-md-12">
                          <!-- <p><font color=#787878>2023/12 - Work on effects of wedge tail thickness on NACA 0021 airfoil got published in <a href="https://www.jmr.unican.es/" target="_blank"> JMR</a>!</font></p> -->
-                         <p><font color=#787878>2025/02 - Work on MXene additives for enhanced pool boiling got published in <a href="https://pubs.acs.org/journal/acsodf?ref=breadcrumb" target="_blank" style="color: #196CD1;"> Omega</a>!</font></p>
+                         <p><font color=#787878>2025/02 - Work on MXene additives for enhanced pool boiling got published in <a href="https://pubs.acs.org/journal/acsodf?ref=breadcrumb" target="_blank" style="color: #196CD1;"> ACS Omega</a>!</font></p>
                          <p><font color=#787878>2024/01 - Work on fast aerodynamics prediction of wedge tail airfoils got published in <a href="https://link.springer.com/journal/13369" target="_blank" style="color: #196CD1;"> AJSE</a>!</font></p>
                          <p><font color=#787878>2023/12 - Received a teaching assistantship!</font></p>
                          <p><font color=#787878>2023/09 - Accepted at <a href="https://www.utoledo.edu/" target="_blank" style="color: #196CD1;">UToledo</a> for fully funded MS in Mechanical Engineering.</font></p>
@@ -500,10 +500,18 @@ a.blue-link {
 
 
 
+/* #block-page { */
+  /* width: 850px; */
+  /* margin: 0 auto; */
+  /* padding-top: 40px; adjust this if navbar height changes */
+/* } */
+
 #block-page {
-  width: 850px;
+  max-width: 850px;
+  width: 100%;
   margin: 0 auto;
-  padding-top: 40px; /* adjust this if navbar height changes */
+  padding: 40px 15px 0 15px;
+  box-sizing: border-box;
 }
 
 
