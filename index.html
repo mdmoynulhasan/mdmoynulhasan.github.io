@@ -88,6 +88,7 @@ a.blue-link {
 <a href="publications.html" class="nav-link">Publications</a>
 <a href="projects.html" class="nav-link">Projects</a>
 <a href="courses.html" class="nav-link">Courses</a>
+<!-- <a href="extra.html" class="nav-link">Extracurricular</a> -->
 <a href="./files/CV_MMH.pdf" target="_blank" class="nav-link">CV</a>
     </div>
   </div>
@@ -134,7 +135,7 @@ a.blue-link {
                              <td width="20%"><center><img src="icon/toledo.png" style="max-height:50px;"></center></td>
                              <td width="20%"><center><img src="icon/toledo.png" style="max-height:50px;"></center></td>
                              <td width="20%"><center><img src="icon/buet.svg" style="max-height:50px;"></center></td>
-                             <td width="20%"><center><img src="icon/animo.jpg" style="max-height:50px;"></center></td>
+                             <!-- <td width="20%"><center><img src="icon/animo.jpg" style="max-height:50px;"></center></td> -->
                              <td width="20%"><center><img src="icon/buet.svg" style="max-height:50px;"></center></td>
                          </tr>
 
@@ -272,7 +273,7 @@ a.blue-link {
                          <p><font color=#787878>2023/08 - Work on effects of wedge tail thickness on NACA 0021 airfoil got published in <a href="https://www.jmr.unican.es/" target="_blank" style="color: #196CD1;"> JMR</a>!</font></p>
                          <p><font color=#787878>2022/10 - Joined <a href="https://www.buet.ac.bd/web/#/" target="_blank" style="color: #196CD1;">BUET</a> as a Research Assistant.</font></p>
                          <p><font color=#787878>2022/08 - Graduated from <a href="https://www.buet.ac.bd/web/#/" target="_blank" style="color: #196CD1;">BUET</a>.</font></p>
-                         <p><font color=#787878>2021/08 - Joined <a href="https://www.linkedin.com/company/animo-ai/?originalSubdomain=bd" target="_blank" style="color: #196CD1;">Animo.Ai</a></font> as a Machine Learning Engineer intern.</p>
+                         <!-- <p><font color=#787878>2021/08 - Joined <a href="https://www.linkedin.com/company/animo-ai/?originalSubdomain=bd" target="_blank" style="color: #196CD1;">Animo.Ai</a></font> as a Machine Learning Engineer intern.</p> -->
                          <p><font color=#787878>2020/11 - Work on feature fusion approach for detecting COVID-19 got accepted to <a href="https://icece.buet.ac.bd/" target="_blank" style="color: #196CD1;"> ICECE 2020</a>!</font></p>
                      </div>
                  </div>
@@ -675,9 +676,21 @@ body {
 
 
 
-<div id="bottom-footer">
+<!-- <div id="bottom-footer">
   <p>© Copyright 2025 Md Moynul Hasan. Hosted by GitHub Pages. Last updated: May 29, 2025.</p>
+</div> -->
+
+
+
+<div id="bottom-footer">
+  <p>&copy; Copyright 2025 Md Moynul Hasan. Hosted by GitHub Pages. Last updated: <span id="lastUpdated"></span>.</p>
 </div>
+
+<script>
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const today = new Date();
+  document.getElementById("lastUpdated").textContent = today.toLocaleDateString("en-US", options);
+</script>
 
 
 </body>

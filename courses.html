@@ -87,6 +87,7 @@ a.blue-link {
 <a href="publications.html" class="nav-link">Publications</a>
 <a href="projects.html" class="nav-link">Projects</a>
 <a href="courses.html" class="nav-link">Courses</a>
+<!-- <a href="extra.html" class="nav-link">Extracurricular</a> -->
 <a href="./files/CV_MMH.pdf" target="_blank" class="nav-link">CV</a>
     </div>
   </div>
@@ -602,9 +603,20 @@ body {
 
 <div class="row" style="margin-bottom: -20px;"></div>
 
-<div id="bottom-footer">
+<!-- <div id="bottom-footer">
   <p>© Copyright 2025 Md Moynul Hasan. Hosted by GitHub Pages. Last updated: May 29, 2025.</p>
+</div> -->
+
+
+
+<div id="bottom-footer">
+  <p>&copy; Copyright 2025 Md Moynul Hasan. Hosted by GitHub Pages. Last updated: <span id="lastUpdated"></span>.</p>
 </div>
 
+<script>
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const today = new Date();
+  document.getElementById("lastUpdated").textContent = today.toLocaleDateString("en-US", options);
+</script>
 
 </body>
