@@ -18,37 +18,6 @@
 
     <!-- <link rel="stylesheet" href="./files/video_template.css"> -->
 
-<style>
-  /* Default desktop style */
-  .responsive-half {
-    width: 425px;
-    display: block;
-  }
-
-  .responsive-full {
-    width: 850px;
-    display: block;
-  }
-
-  /* Mobile screen adjustment */
-  @media (max-width: 1000px) {
-    .responsive-half {
-      width: 40vw;
-    }
-
-    .responsive-full {
-      width: 80vw;
-    }
-  }
-
-  html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
-</style>
-
-
     <style> 
         .research-img{border-radius:20px;}
         .div-a{float:left;width:80%;} 
@@ -150,7 +119,7 @@ a.blue-link {
     </div>
 
     <!-- Image SECOND -->
-    <div id="photo" class="responsive-half"> 
+    <div id="photo" class="col-md-3">
         <img class="img-responsive img-hover" align="center" src="./files/profile.png" width='100%' style="padding-top:35px">
     </div>
 </div>
@@ -362,7 +331,7 @@ a.blue-link {
                  <script src="./files/jquery.min.js"></script>
                  <script src="./files/bootstrap.min.js"></script> <!-- static is the folder name -->
 
-                 <script type="text/javascript">
+                 <!-- <script type="text/javascript">
                      var screen_width = document.documentElement.clientWidth;
                      if (screen_width > 1000) {
                          screen_width = 850
@@ -390,7 +359,7 @@ a.blue-link {
                      }
                      // alert(screen_width)
                      document.getElementById("block-page").setAttribute("style", "width:" + String(screen_width) + "px;display:block");
-                 </script>
+                 </script> -->
 
              </div>
 
