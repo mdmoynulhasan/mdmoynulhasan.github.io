@@ -18,36 +18,41 @@
 
     <!-- <link rel="stylesheet" href="./files/video_template.css"> -->
 
-    
-    
-    
-    
-    
+<style>
+  /* Default desktop style */
+  .responsive-half {
+    width: 425px;
+    display: block;
+  }
+
+  .responsive-full {
+    width: 850px;
+    display: block;
+  }
+
+  /* Mobile screen adjustment */
+  @media (max-width: 1000px) {
+    .responsive-half {
+      width: 40vw;
+    }
+
+    .responsive-full {
+      width: 80vw;
+    }
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+</style>
+
+
     <style> 
         .research-img{border-radius:20px;}
         .div-a{float:left;width:80%;} 
         .div-b{float:right;width:80%;} 
-
-
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-#wrapper {
-  width: 850px;
-  margin: 0 auto;
-  transform-origin: top left;
-}
-
-@media (max-width: 850px) {
-  #wrapper {
-    transform: scale(calc(100vw / 850));
-    height: calc(100vh * 850 / 100vw);
-  }
-}
-
     </style> 
 
     <style>
@@ -114,7 +119,7 @@ a.blue-link {
 <a href="publications.html" class="nav-link">Publications</a>
 <a href="projects.html" class="nav-link">Projects</a>
 <a href="courses.html" class="nav-link">Courses</a>
-<a href="i.html" class="nav-link">I</a>
+<!-- <a href="i.html" class="nav-link">I</a> -->
 <!-- <a href="extra.html" class="nav-link">Extracurricular</a> -->
 <a href="./files/CV_MMH.pdf" target="_blank" class="nav-link">CV</a>
     </div>
@@ -145,7 +150,7 @@ a.blue-link {
     </div>
 
     <!-- Image SECOND -->
-    <div id="photo" class="col-md-3">
+    <div id="photo" class="responsive-half"> 
         <img class="img-responsive img-hover" align="center" src="./files/profile.png" width='100%' style="padding-top:35px">
     </div>
 </div>
