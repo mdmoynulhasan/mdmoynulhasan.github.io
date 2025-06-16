@@ -4,7 +4,7 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <meta name="viewport" content="width=1200">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="icon" href="./icon/toledo.png" >
@@ -86,9 +86,9 @@ a.blue-link {
     <div class="nav-container">
       <a href="#about" class="nav-link">Home</a>
 <a href="publications.html" class="nav-link">Publications</a>
+<a href="i.html" class="nav-link">I</a>
 <a href="projects.html" class="nav-link">Projects</a>
 <a href="courses.html" class="nav-link">Courses</a>
-<a href="i.html" class="nav-link">I</a>
 <!-- <a href="extra.html" class="nav-link">Extracurricular</a> -->
 <a href="./files/CV_MMH.pdf" target="_blank" class="nav-link">CV</a>
     </div>
@@ -100,7 +100,7 @@ a.blue-link {
                  <br>
   <div id="about" class="row">
     <!-- Text FIRST -->
-    <div class="col-md-9">
+    <div class="col-12 col-md-9">
         <h2 style="color:#000000;padding-top:0px;margin-bottom:10px;margin-top:4px;text-align:left"><strong>Md Moynul Hasan</strong></h2>
         <p style="line-height:25px;color: #787878">Email: <a href="mailto:mdmoynul.hasan@rockets.utoledo.edu" style="color: #196CD1;">mdmoynul.hasan@rockets.utoledo.edu</a></p>
         <p style="text-align: justify;" style="line-height:25px;color: #787878">
@@ -327,10 +327,10 @@ a.blue-link {
 
 
 
-                 <!-- <br> -->
+                 <!-- <br>
                  <script src="./files/jquery.min.js"></script>
                  <script src="./files/bootstrap.min.js"></script> <!-- static is the folder name -->
-
+<!-- 
                  <script type="text/javascript">
                      var screen_width = document.documentElement.clientWidth;
                      if (screen_width > 1000) {
@@ -359,7 +359,7 @@ a.blue-link {
                      }
                      // alert(screen_width)
                      document.getElementById("block-page").setAttribute("style", "width:" + String(screen_width) + "px;display:block");
-                 </script>
+                 </script> --> -->
 
              </div>
 
@@ -473,7 +473,8 @@ a.blue-link {
 
 /* Centered nav bar content */
 .nav-container {
-  width: 850px;
+  width: 90%;
+  max-width: 850px;
   margin: 0 auto;
   padding: 12px 0;
   display: flex;
@@ -507,7 +508,8 @@ a.blue-link {
 
 
 #block-page {
-  width: 850px;
+  width: 90%;
+  max-width: 850px;
   margin: 0 auto;
   padding-top: 40px;
 }
