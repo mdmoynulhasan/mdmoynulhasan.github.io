@@ -23,6 +23,63 @@
         .div-a{float:left;width:80%;} 
         .div-b{float:right;width:80%;} 
     </style> 
+      <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    #wrapper {
+      width: 850px;
+      margin: 0 auto;
+      transform-origin: top left;
+    }
+
+    @media (max-width: 850px) {
+      #wrapper {
+        transform: scale(calc(100vw / 850));
+        height: calc(100vh * 850 / 100vw); /* prevent bottom white space */
+      }
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: flex-end;
+      padding: 16px 0;
+      gap: 24px;
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .nav-container a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .content {
+      padding: 40px 20px;
+      background-color: #ffffff;
+    }
+
+    .col-md-9, .col-md-3 {
+      padding: 15px;
+    }
+
+    h2, h4 {
+      margin-top: 0;
+    }
+
+    @media (max-width: 850px) {
+      body {
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+    }
+  </style>
 
     <style>
         /* latin */
