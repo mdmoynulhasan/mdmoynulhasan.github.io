@@ -1,0 +1,9 @@
+@article{balsamy2025comparison,
+  title={Comparison of 3D-printed copper surfaces for enhanced pool boiling heat transfer},
+  author={Balsamy-Kamaraj, Abishek and Hasan, Md Moynul and Merugu, Saketh and Gupta, Anju},
+  journal={Manufacturing Letters},
+  volume={44},
+  pages={1649--1656},
+  year={2025},
+  publisher={Elsevier}
+}
