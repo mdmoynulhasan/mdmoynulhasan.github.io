@@ -1,0 +1,7 @@
+@article{suthar2026compositional,
+  title={Compositional Complexity in High-Entropy Oxides Optimizes Colloidal Stability and Pool Boiling Heat Transfer},
+  author={Suthar, Keval Bharatbhai and Kandage, Manjula M. and Hasan, Md Moynul and Merugu, Saketh and Marszewski, Michal and Gupta, Anju},
+  journal={Precision Chemistry},
+  year={2026},
+  publisher={ACS Publications}
+}
