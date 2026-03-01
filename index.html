@@ -242,7 +242,7 @@
           <!-- MOVE navbar here -->
           <div id="top-nav">
             <div class="nav-container">
-              <a href="#about" class="nav-link">Home</a>
+              <a href="index.html" class="nav-link">Home</a>
               <a href="publications.html" class="nav-link">Publications</a>
               <a href="projects.html" class="nav-link">Projects</a>
               <a href="courses.html" class="nav-link">Courses</a>
@@ -1062,9 +1062,13 @@
         <script>
           window.addEventListener("DOMContentLoaded", () => {
             const links = document.querySelectorAll("#top-nav .nav-link");
-            const current = window.location.hash || "#about";
+            const currentPath = window.location.pathname;
             links.forEach(link => {
-              if (link.getAttribute("href") === current) {
+              const linkPath = link.getAttribute("href");
+              // Highlight 'Home' when on index.html or root
+              if ((currentPath === "/" || currentPath.includes("index")) && linkPath === "index.html") {
+                link.classList.add("active");
+              } else if (currentPath.endsWith(linkPath)) {
                 link.classList.add("active");
               } else {
                 link.classList.remove("active");
@@ -1088,7 +1092,7 @@
 
 
         <div id="bottom-footer">
-          <p>© Copyright 2025 Md Moynul Hasan. Hosted by GitHub Pages. Last updated: February 18, 2026.</p>
+          <p>© Copyright 2026 Md Moynul Hasan. Hosted by GitHub Pages. Last updated: March 1, 2026.</p>
         </div>
 
         <script>

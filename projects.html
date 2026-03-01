@@ -12,6 +12,7 @@
     gtag('config', 'G-5ZVEK6TE9Z');
   </script>
 
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
   <meta name="viewport" content="width=1200">
@@ -25,8 +26,6 @@
   <link rel="stylesheet" href="./files/font-awesome.min.css">
   <link href="./files/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
-
-  <!-- <link rel="stylesheet" href="./files/video_template.css"> -->
 
   <style>
     .research-img {
@@ -45,11 +44,13 @@
   </style>
 
   <style>
+    /* ===== Font faces ===== */
     @font-face {
       font-family: 'Lato';
       font-style: normal;
       font-weight: 400;
       src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     }
 
     @font-face {
@@ -57,32 +58,39 @@
       font-style: normal;
       font-weight: 700;
       src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     }
 
+    /* ===== Light theme (default) ===== */
     :root {
       --bg: #FAFAF8;
       --bg-nav: #ffffff;
       --text-primary: #1A1A1A;
       --text-body: #787878;
+      --text-secondary: #6B6B6B;
       --link: #1A1A1A;
       --link-hover: #1d75cf;
       --border: #E5E2DC;
       --footer-bg: #000000;
       --footer-text: #ffffff;
+      --lb-overlay: rgba(0, 0, 0, 0.82);
       --toggle-bg: #e8e5df;
       --toggle-icon: #444;
     }
 
+    /* ===== Dark theme ===== */
     [data-theme="dark"] {
       --bg: #1C1C1E;
       --bg-nav: #111113;
       --text-primary: #E8E8E8;
       --text-body: #AAAAAA;
+      --text-secondary: #9A9A9A;
       --link: #E8E8E8;
       --link-hover: #5BA4F5;
       --border: #333336;
       --footer-bg: #0a0a0b;
       --footer-text: #888888;
+      --lb-overlay: rgba(0, 0, 0, 0.92);
       --toggle-bg: #3a3a3c;
       --toggle-icon: #f0c040;
     }
@@ -90,7 +98,7 @@
     body {
       background-color: var(--bg);
       color: var(--text-primary);
-      font-family: 'Lato', Calibri, sans-serif;
+      font-family: 'Lato', Calibri, 'sans-serif';
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
@@ -118,6 +126,7 @@
       color: #003373 !important;
     }
 
+    /* ===== Theme toggle button ===== */
     #theme-toggle {
       background: var(--toggle-bg);
       border: none;
@@ -125,6 +134,7 @@
       padding: 4px 10px;
       cursor: pointer;
       font-size: 15px;
+      line-height: 1;
       color: var(--toggle-icon);
       transition: background 0.3s ease, transform 0.2s ease;
     }
@@ -133,6 +143,7 @@
       transform: scale(1.1);
     }
 
+    /* ===== Dark mode overrides ===== */
     [data-theme="dark"] #top-nav {
       background-color: var(--bg-nav);
       border-bottom-color: var(--border);
@@ -165,7 +176,6 @@
 
     [data-theme="dark"] h2,
     [data-theme="dark"] h4,
-    [data-theme="dark"] h5,
     [data-theme="dark"] strong {
       color: var(--text-primary);
     }
@@ -174,8 +184,47 @@
     [data-theme="dark"] font[color="#787878"] {
       color: var(--text-body) !important;
     }
+
+    [data-theme="dark"] #lightbox-overlay {
+      background: var(--lb-overlay);
+    }
+
+    [data-theme="dark"] .highlight-card p,
+    [data-theme="dark"] .lab-tour-card p {
+      color: var(--text-secondary) !important;
+    }
+
+    [data-theme="dark"] .highlight-card img,
+    [data-theme="dark"] .highlight-img,
+    [data-theme="dark"] .lab-tour-img {
+      border-color: var(--border) !important;
+    }
+
+    [data-theme="dark"] .scroll-btn {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    [data-theme="dark"] .scroll-btn:hover {
+      background: rgba(255, 255, 255, 0.26);
+    }
+
+    [data-theme="dark"] .highlight-link p,
+    [data-theme="dark"] .highlight-link:hover p,
+    [data-theme="dark"] .highlight-link:visited p {
+      color: var(--text-secondary) !important;
+    }
   </style>
-  <script>(function () { var s = localStorage.getItem('theme'), d = window.matchMedia('(prefers-color-scheme: dark)').matches; if (s === 'dark' || (!s && d)) document.documentElement.setAttribute('data-theme', 'dark'); })();</script>
+
+  <!-- Apply saved theme BEFORE paint to avoid flash -->
+  <script>
+    (function () {
+      var saved = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
 </head>
 
 <body data-gr-c-s-loaded="true">
@@ -730,7 +779,6 @@
 
 
 
-
             <!-- <br> -->
             <script src="./files/jquery.min.js"></script>
             <script src="./files/bootstrap.min.js"></script> <!-- static is the folder name -->
@@ -773,29 +821,55 @@
               const scrollContainer = document.getElementById("highlight-scroll");
               const leftArrow = document.getElementById("left-arrow");
               const rightArrow = document.getElementById("right-arrow");
-
               const scrollLeft = scrollContainer.scrollLeft;
               const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-
-              leftArrow.style.display = scrollLeft > 5 ? "block" : "none";
-              rightArrow.style.display = scrollLeft < maxScrollLeft - 5 ? "block" : "none";
+              leftArrow.style.opacity = scrollLeft > 5 ? "1" : "0";
+              leftArrow.style.pointerEvents = scrollLeft > 5 ? "auto" : "none";
+              rightArrow.style.opacity = scrollLeft < maxScrollLeft - 5 ? "1" : "0";
+              rightArrow.style.pointerEvents = scrollLeft < maxScrollLeft - 5 ? "auto" : "none";
             }
 
             function scrollHighlights(direction) {
               const scrollContainer = document.getElementById("highlight-scroll");
-              const scrollAmount = 300; // pixels to scroll
-              scrollContainer.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
+              // Scroll by one card width for precise snapping
+              const card = scrollContainer.querySelector(".highlight-card, .lab-tour-card");
+              const cardWidth = card ? card.offsetWidth + 30 : 270;
+              scrollContainer.scrollBy({ left: direction * cardWidth, behavior: "smooth" });
             }
 
             document.addEventListener("DOMContentLoaded", () => {
               const scrollContainer = document.getElementById("highlight-scroll");
 
-              // Update on load and on scroll
               updateArrowVisibility();
               scrollContainer.addEventListener("scroll", updateArrowVisibility);
-
-              // Also update on resize (in case layout changes)
               window.addEventListener("resize", updateArrowVisibility);
+
+              // --- Drag to scroll ---
+              let isDown = false;
+              let startX;
+              let scrollLeftStart;
+
+              scrollContainer.addEventListener("mousedown", (e) => {
+                isDown = true;
+                scrollContainer.classList.add("dragging");
+                startX = e.pageX - scrollContainer.offsetLeft;
+                scrollLeftStart = scrollContainer.scrollLeft;
+              });
+              scrollContainer.addEventListener("mouseleave", () => {
+                isDown = false;
+                scrollContainer.classList.remove("dragging");
+              });
+              scrollContainer.addEventListener("mouseup", () => {
+                isDown = false;
+                scrollContainer.classList.remove("dragging");
+              });
+              scrollContainer.addEventListener("mousemove", (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - scrollContainer.offsetLeft;
+                const walk = (x - startX) * 1.2;
+                scrollContainer.scrollLeft = scrollLeftStart - walk;
+              });
             });
           </script>
 
@@ -806,8 +880,14 @@
               display: flex;
               overflow-x: auto;
               scroll-behavior: smooth;
-              padding: 0px;
+              padding: 10px 4px;
               gap: 30px;
+              scroll-snap-type: x mandatory;
+            }
+
+            .highlight-card,
+            .lab-tour-card {
+              scroll-snap-align: start;
             }
 
 
@@ -843,24 +923,47 @@
               position: absolute;
               top: 50%;
               transform: translateY(-50%);
-              background: none;
+              background: rgba(0, 0, 0, 0.45);
               border: none;
+              border-radius: 50%;
+              width: 38px;
+              height: 38px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
               cursor: pointer;
-              padding: 0 10px;
               z-index: 10;
-              opacity: 0.8;
+              padding: 0;
+              transition: opacity 0.25s ease, transform 0.2s ease, background 0.2s ease;
+              backdrop-filter: blur(4px);
+              -webkit-backdrop-filter: blur(4px);
             }
 
             .scroll-btn:hover {
-              opacity: 1;
+              background: rgba(0, 0, 0, 0.7);
+              transform: translateY(-50%) scale(1.1);
+            }
+
+            .scroll-btn:active {
+              transform: translateY(-50%) scale(0.95);
             }
 
             #left-arrow {
-              left: 0;
+              left: -8px;
             }
 
             #right-arrow {
-              right: 0;
+              right: -8px;
+            }
+
+            .highlight-scroll.dragging {
+              cursor: grabbing;
+              scroll-snap-type: none;
+              user-select: none;
+            }
+
+            .highlight-scroll {
+              cursor: grab;
             }
 
 
@@ -879,12 +982,15 @@
 
             /* Centered nav bar content */
             .nav-container {
-              width: 850px;
+              max-width: 850px;
+              width: 100%;
               margin: 0 auto;
-              padding: 12px 0;
+              padding: 12px 16px;
               display: flex;
               justify-content: flex-end;
+              flex-wrap: wrap;
               gap: 25px;
+              box-sizing: border-box;
             }
 
             /* Nav link style */
@@ -913,11 +1019,16 @@
 
 
             #block-page {
-              width: 850px;
+              max-width: 850px;
+              width: 100%;
               margin: 0 auto;
               padding-top: 40px;
-              /* adjust this if navbar height changes */
+              padding-left: 16px;
+              padding-right: 16px;
+              box-sizing: border-box;
             }
+
+
 
 
             #scrollProgressBar {
@@ -986,7 +1097,7 @@
               font-size: 14px;
               color: #787878;
               margin-top: 10px;
-              padding: 0px 12px;
+              padding: 0px 1px;
               text-align: center;
               word-wrap: break-word;
               max-width: 100% !important;
@@ -1055,15 +1166,81 @@
               /* keep the intended gray */
             }
 
-
-            .author-link {
-              color: #787878;
-              text-decoration: none;
+            /* Customize scrollbar for Webkit-based browsers */
+            .highlight-scroll::-webkit-scrollbar {
+              height: 0px;
+              /* Makes it thinner */
             }
 
-            .author-link:hover {
-              text-decoration: underline;
-              color: #787878;
+            /* === Lightbox === */
+            #lightbox-overlay {
+              display: none;
+              position: fixed;
+              inset: 0;
+              background: rgba(0, 0, 0, 0.82);
+              z-index: 10000;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+            }
+
+            #lightbox-overlay.active {
+              display: flex;
+            }
+
+            #lightbox-box {
+              position: relative;
+              background: transparent;
+              border-radius: 0;
+              padding: 0;
+              max-width: 90vw;
+              max-height: 90vh;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              box-shadow: none;
+              cursor: default;
+              animation: lb-in 0.22s ease;
+            }
+
+            @keyframes lb-in {
+              from {
+                opacity: 0;
+                transform: scale(0.88);
+              }
+
+              to {
+                opacity: 1;
+                transform: scale(1);
+              }
+            }
+
+            #lightbox-img {
+              max-width: 90vw;
+              max-height: 90vh;
+              width: auto;
+              height: auto;
+              border-radius: 0px;
+              object-fit: contain;
+              display: block;
+            }
+
+            #lightbox-close {
+              position: absolute;
+              top: -32px;
+              right: -4px;
+              background: none;
+              border: none;
+              font-size: 28px;
+              line-height: 1;
+              color: #fff;
+              cursor: pointer;
+              padding: 0;
+              transition: color 0.15s;
+            }
+
+            #lightbox-close:hover {
+              color: #5eaeff;
             }
           </style>
 
@@ -1072,12 +1249,9 @@
             window.addEventListener("DOMContentLoaded", () => {
               const links = document.querySelectorAll("#top-nav .nav-link");
               const currentPath = window.location.pathname;
-
               links.forEach(link => {
                 const linkPath = link.getAttribute("href");
-
-                // Highlight 'Home' when on index.html or root
-                if ((currentPath === "/" || currentPath.includes("index")) && linkPath === "#about") {
+                if ((currentPath === "/" || currentPath.includes("index")) && linkPath === "index.html") {
                   link.classList.add("active");
                 } else if (currentPath.endsWith(linkPath)) {
                   link.classList.add("active");
@@ -1097,43 +1271,50 @@
             });
           </script>
 
-          <div class="row" style="margin-bottom: -10px;"></div>
+
+
+
+
 
           <div id="bottom-footer">
-            <p>© Copyright 2025 Md Moynul Hasan. Hosted by GitHub Pages. Last updated: February 18, 2026.</p>
+            <p>© Copyright 2026 Md Moynul Hasan. Hosted by GitHub Pages. Last updated: March 1, 2026.</p>
           </div>
 
           <script>
+            function openLightbox(src) {
+              document.getElementById('lightbox-img').src = src;
+              document.getElementById('lightbox-overlay').classList.add('active');
+              document.body.style.overflow = 'hidden';
+            }
+            function closeLightbox() {
+              document.getElementById('lightbox-overlay').classList.remove('active');
+              document.body.style.overflow = '';
+            }
+            document.addEventListener('keydown', function (e) {
+              if (e.key === 'Escape') closeLightbox();
+            });
+
+            // ===== Dark / Light mode toggle =====
             function applyTheme(theme) {
               document.documentElement.setAttribute('data-theme', theme);
-              var btn = document.getElementById('theme-toggle');
+              const btn = document.getElementById('theme-toggle');
               if (btn) btn.textContent = theme === 'dark' ? '☀️' : '🌙';
             }
+
             function toggleTheme() {
-              var current = document.documentElement.getAttribute('data-theme');
-              var next = current === 'dark' ? 'light' : 'dark';
+              const current = document.documentElement.getAttribute('data-theme');
+              const next = current === 'dark' ? 'light' : 'dark';
               localStorage.setItem('theme', next);
               applyTheme(next);
             }
+
+            // Sync button icon on page load (theme already applied in <head>)
             document.addEventListener('DOMContentLoaded', function () {
-              var saved = localStorage.getItem('theme');
-              var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-              applyTheme(saved || (prefersDark ? 'dark' : 'light'));
+              const saved = localStorage.getItem('theme');
+              const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+              const active = saved || (prefersDark ? 'dark' : 'light');
+              applyTheme(active);
             });
           </script>
-
-
-
-
-          <!-- <div id="bottom-footer">
-  <p>&copy; Copyright 2025 Md Moynul Hasan. Hosted by GitHub Pages. Last updated: <span id="lastUpdated"></span>.</p>
-</div>
-
-<script>
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
-  const today = new Date();
-  document.getElementById("lastUpdated").textContent = today.toLocaleDateString("en-US", options);
-</script> -->
-
 
 </body>
