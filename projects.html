@@ -100,6 +100,22 @@
       color: var(--text-primary);
       font-family: 'Lato', Calibri, 'sans-serif';
       transition: background-color 0.3s ease, color 0.3s ease;
+      animation: pageIn 0.35s ease;
+    }
+
+    @keyframes pageIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    body.page-exit {
+      opacity: 0;
+      transition: opacity 0.01s ease !important;
     }
 
     p,
@@ -1257,6 +1273,22 @@
                   link.classList.add("active");
                 } else {
                   link.classList.remove("active");
+                }
+              });
+            });
+          </script>
+
+          <script>
+            // Smooth page exit transition
+            document.addEventListener('DOMContentLoaded', function () {
+              document.querySelectorAll('a[href]').forEach(function (link) {
+                var href = link.getAttribute('href');
+                if (href && !href.startsWith('#') && !href.startsWith('http') && !href.startsWith('//') && !href.startsWith('mailto')) {
+                  link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.body.classList.add('page-exit');
+                    setTimeout(function () { window.location.href = href; }, 260);
+                  });
                 }
               });
             });
