@@ -1086,9 +1086,16 @@
 
           <div class="row" style="margin-bottom: -10px;"></div>
 
-          <div id="bottom-footer">
-            <p>© Copyright 2026 Md Moynul Hasan. Hosted by GitHub Pages. Last updated: March 1, 2026.</p>
-          </div>
+        <div id="bottom-footer">
+          <p>© Copyright 2025 Md Moynul Hasan. Hosted by GitHub Pages. Last updated: <span id="build-date"></span>.</p>
+          <script>
+            (function () {
+              var d = new Date(document.lastModified);
+              var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+              document.getElementById('build-date').textContent = months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+            })();
+          </script>
+        </div>
 
           <script>
             function applyTheme(theme) {
